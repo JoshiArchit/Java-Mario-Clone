@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aeef7fad-a037-4a1a-a22a-2379fe569969" name="Changes" comment="Java-Mario">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="aeef7fad-a037-4a1a-a22a-2379fe569969" name="Changes" comment="Java-Mario Clone : Updates and run() method v1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java-Mario.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Mario Clone.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/main/mario/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/mario/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +86,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686323002678</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Java-Mario Clone : Updates and run() method v1">
+      <created>1687544948007</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1687544948007</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -104,6 +109,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Java-Mario" />
-    <option name="LAST_COMMIT_MESSAGE" value="Java-Mario" />
+    <MESSAGE value="Java-Mario Clone : Updates and run() method v1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Java-Mario Clone : Updates and run() method v1" />
   </component>
 </project>

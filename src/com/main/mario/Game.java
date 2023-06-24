@@ -1,6 +1,7 @@
 package com.main.mario;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferStrategy;
 
 public class Game extends Canvas implements Runnable{
     // Frame variables
@@ -72,7 +73,21 @@ public class Game extends Canvas implements Runnable{
     }
 
     public void render() {
+        //Create buffer strategy
+        BufferStrategy bs = getBufferStrategy();
+        if(bs == null) {
+            createBufferStrategy( 3 );
+            return;
+        }
 
+        Graphics g = bs.getDrawGraphics();
+        // setColor(new Color(R,G,B))
+        g.setColor( Color.BLUE );
+        g.fillRect( 0, 0, getWidth(), getHeight() );
+        g.setColor( Color.RED );
+        g.fillRect( 400, 400, getWidth()-400, getHeight()-400 );
+        g.dispose();
+        bs.show();
     }
 
 
