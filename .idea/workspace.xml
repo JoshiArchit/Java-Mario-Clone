@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aeef7fad-a037-4a1a-a22a-2379fe569969" name="Changes" comment="Java-Mario Clone : Updates and run() method v1">
+    <list default="true" id="aeef7fad-a037-4a1a-a22a-2379fe569969" name="Changes" comment="Added collision detection">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/main/mario/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/mario/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,19 +50,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="Java-Mario Clone" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="Java-Mario Clone" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Game" />
@@ -93,7 +79,77 @@
       <option name="project" value="LOCAL" />
       <updated>1687544948007</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Java-Mario Clone : Buffer Strategy and Graphics rendering.">
+      <created>1687601551936</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1687601551936</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Java-Mario Clone : Entity and Tile class skeleton">
+      <created>1687601589069</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1687601589069</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Java-Mario Clone : Added Rectangle methods for collision detection">
+      <created>1688140234554</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1688140234554</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Java-Mario Clone : Added tile object code to render">
+      <created>1688140272993</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1688140272993</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Java-Mario Clone : tick() method updated">
+      <created>1688140301756</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1688140301756</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Java-Mario Clone : tick() method updated">
+      <created>1688140332757</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1688140332757</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Java-Mario Clone : helper Rectangle method for collision detection">
+      <created>1688140354857</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1688140354857</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Java-Mario Clone : wall object Id">
+      <created>1688140368866</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1688140368866</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Keyboard input class">
+      <created>1688140386173</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1688140386173</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Added collision detection">
+      <created>1688140400394</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1688140400394</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -110,6 +166,15 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Java-Mario" />
     <MESSAGE value="Java-Mario Clone : Updates and run() method v1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Java-Mario Clone : Updates and run() method v1" />
+    <MESSAGE value="Java-Mario Clone : Buffer Strategy and Graphics rendering." />
+    <MESSAGE value="Java-Mario Clone : Entity and Tile class skeleton" />
+    <MESSAGE value="Java-Mario Clone : Added Rectangle methods for collision detection" />
+    <MESSAGE value="Java-Mario Clone : Added tile object code to render" />
+    <MESSAGE value="Java-Mario Clone : tick() method updated" />
+    <MESSAGE value="Java-Mario Clone : helper Rectangle method for collision detection" />
+    <MESSAGE value="Java-Mario Clone : wall object Id" />
+    <MESSAGE value="Keyboard input class" />
+    <MESSAGE value="Added collision detection" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added collision detection" />
   </component>
 </project>
