@@ -68,6 +68,7 @@ public abstract class Tile {
     }
 
     public Rectangle getBounds() {
+        // Collision detection
         return new Rectangle(getX(), getY(), width, height);
     }
 
