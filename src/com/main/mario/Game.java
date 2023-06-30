@@ -1,4 +1,8 @@
 package com.main.mario;
+import com.main.mario.entity.Player;
+import com.main.mario.input.KeyInput;
+import com.main.mario.tile.Wall;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
@@ -13,6 +17,16 @@ public class Game extends Canvas implements Runnable{
     // Game loop threads
     private Thread thread;
     private boolean running = false;
+
+    public static Handler handler;
+
+    public Game() {
+        Dimension size = new Dimension( WIDTH*SCALE, HEIGHT*SCALE );
+        setPreferredSize( size );
+        setMaximumSize( size );
+        setMinimumSize( size );
+    }
+
 
     // TODO: 6/23/2023 : ADD JFRAME Code
     private void jFrame() {
@@ -41,6 +55,9 @@ public class Game extends Canvas implements Runnable{
     // TODO: Research run() method
     @Override
     public void run() {
+        init();
+        requestFocus();
+
         long lastTime = System.nanoTime();
         long timer = System.currentTimeMillis();
 
@@ -82,27 +99,23 @@ public class Game extends Canvas implements Runnable{
 
         Graphics g = bs.getDrawGraphics();
         // setColor(new Color(R,G,B))
-        g.setColor( Color.BLUE );
+        g.setColor( Color.BLACK);
         g.fillRect( 0, 0, getWidth(), getHeight() );
-        g.setColor( Color.RED );
-        g.fillRect( 400, 400, getWidth()-400, getHeight()-400 );
+        handler.render( g );
         g.dispose();
         bs.show();
     }
 
 
     public void tick() {
-
+        handler.tick();
     }
 
-
-
-    // Constructor
-    public Game() {
-        Dimension size = new Dimension( WIDTH*SCALE, HEIGHT*SCALE );
-        setPreferredSize( size );
-        setMaximumSize( size );
-        setMinimumSize( size );
+    private void init() {
+        handler = new Handler();
+        addKeyListener( new KeyInput() );
+        handler.addEntity( new Player( 200, 400, 64, 64, true, Id.player, handler ) );
+        handler.addTile( new Wall(200, 200, 64, 64, true, Id.wall, handler) );
     }
 
     public static void main( String[] args ) {
