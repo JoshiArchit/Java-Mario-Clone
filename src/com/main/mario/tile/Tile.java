@@ -1,8 +1,11 @@
 package com.main.mario.tile;
 
+import com.main.mario.Handler;
+import com.main.mario.Id;
+
 import java.awt.*;
 
-public class Tile {
+public abstract class Tile {
 
     public int x, y;    // Position classes
     public int width, height;
@@ -11,23 +14,21 @@ public class Tile {
     public int velX;
     public int velY;
 
-    public Tile(int x, int y, int width, int height, boolean solid) {
+    public Id id;
+    public Handler handler;
+
+    public Tile(int x, int y, int width, int height, boolean solid, Id id, Handler handler) {
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = height;
         this.solid = solid;
+        this.id = id;
+        this.handler = handler;
     }
 
-    public void render( Graphics g ) {
-        // Uses graphics object+buffer strategy from Game class
-
-    }
-
-    public void tick() {
-        x += velX;
-        y += velY;
-    }
+    public abstract void render( Graphics g );
+    public abstract void tick();
 
     public int getX() {
         return x;
@@ -53,4 +54,21 @@ public class Tile {
     public void setVelY( int velY ) {
         this.velY = velY;
     }
+
+    public boolean isSolid() {
+        return solid;
+    }
+
+    public Id getId() {
+        return id;
+    }
+
+    public void die() {
+        handler.removeTile( this );
+    }
+
+    public Rectangle getBounds() {
+        return new Rectangle(getX(), getY(), width, height);
+    }
+
 }
