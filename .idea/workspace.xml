@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aeef7fad-a037-4a1a-a22a-2379fe569969" name="Changes" comment="Added collision detection">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="aeef7fad-a037-4a1a-a22a-2379fe569969" name="Changes" comment="Repository changes" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -149,7 +147,21 @@
       <option name="project" value="LOCAL" />
       <updated>1688140400394</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Wall object">
+      <created>1688140588201</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1688140588201</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Repository changes">
+      <created>1688140640527</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1688140640527</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -175,6 +187,8 @@
     <MESSAGE value="Java-Mario Clone : wall object Id" />
     <MESSAGE value="Keyboard input class" />
     <MESSAGE value="Added collision detection" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added collision detection" />
+    <MESSAGE value="Wall object" />
+    <MESSAGE value="Repository changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Repository changes" />
   </component>
 </project>
