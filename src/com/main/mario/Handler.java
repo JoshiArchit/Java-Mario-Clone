@@ -2,6 +2,7 @@ package com.main.mario;
 
 import com.main.mario.entity.Entity;
 import com.main.mario.tile.Tile;
+import com.main.mario.tile.Wall;
 
 import java.awt.*;
 import java.util.LinkedList;
@@ -10,6 +11,10 @@ public class Handler {
 
     public LinkedList<Entity> entity = new LinkedList<Entity>();
     public LinkedList<Tile> tile = new LinkedList<Tile>();
+
+    public Handler() {
+        createLevel();
+    }
 
     public void render( Graphics g) {
         for(Entity en:entity) {
@@ -45,6 +50,16 @@ public class Handler {
 
     public void removeTile(Tile ti) {
         tile.remove( ti );
+    }
+
+    public void createLevel() {
+        for(int i = 0; i<Game.WIDTH*Game.SCALE/64 + 1; i++) {
+            addTile( new Wall( i*64, Game.HEIGHT*Game.SCALE-64, 64, 64, true, Id.wall, this ) );
+
+            if(i != 0 && i!= 1 && i!= 15 && i != 16 && i!= 17) {
+                addTile( new Wall( i*64, 300, 64, 64, true, Id.wall, this ) );
+            }
+        }
     }
 
  }
