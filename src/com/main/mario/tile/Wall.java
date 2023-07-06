@@ -1,5 +1,6 @@
 package com.main.mario.tile;
 
+import com.main.mario.Game;
 import com.main.mario.Handler;
 import com.main.mario.Id;
 
@@ -12,8 +13,7 @@ public class Wall extends Tile{
 
     @Override
     public void render( Graphics g ) {
-        g.setColor( Color.RED );
-        g.fillRect( x, y, width, height );
+        g.drawImage( Game.grass.getBufferedImage(), x, y, width, height, null);
     }
 
     @Override
