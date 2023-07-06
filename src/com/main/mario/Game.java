@@ -1,11 +1,14 @@
 package com.main.mario;
 import com.main.mario.entity.Player;
+import com.main.mario.gfx.Sprite;
+import com.main.mario.gfx.SpriteSheet;
 import com.main.mario.input.KeyInput;
 import com.main.mario.tile.Wall;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
+import java.io.IOException;
 
 public class Game extends Canvas implements Runnable{
     // Frame variables
@@ -19,6 +22,12 @@ public class Game extends Canvas implements Runnable{
     private boolean running = false;
 
     public static Handler handler;
+
+    public static SpriteSheet sheet;
+
+    public static Sprite grass;
+    public static Sprite player;
+
 
     public Game() {
         Dimension size = new Dimension( WIDTH*SCALE, HEIGHT*SCALE );
@@ -55,7 +64,11 @@ public class Game extends Canvas implements Runnable{
     // TODO: Research run() method
     @Override
     public void run() {
-        init();
+        try {
+            init();
+        } catch ( IOException e ) {
+            throw new RuntimeException( e );
+        }
         requestFocus();
 
         long lastTime = System.nanoTime();
@@ -111,11 +124,14 @@ public class Game extends Canvas implements Runnable{
         handler.tick();
     }
 
-    private void init() {
+    private void init() throws IOException {
         handler = new Handler();
+        sheet = new SpriteSheet( "/spritesheet.png" );
         addKeyListener( new KeyInput() );
+        grass = new Sprite( sheet, 2, 1 );
+        player = new Sprite(sheet, 1, 1);
         handler.addEntity( new Player( 200, 400, 64, 64, true, Id.player, handler ) );
-        handler.addTile( new Wall(200, 200, 64, 64, true, Id.wall, handler) );
+//        handler.addTile( new Wall(200, 200, 64, 64, true, Id.wall, handler) );
     }
 
     public static void main( String[] args ) {
