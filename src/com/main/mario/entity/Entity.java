@@ -10,11 +10,15 @@ public abstract class Entity {
     public int x, y;    // Position classes
     public int width, height;
     public boolean solid;
+    public boolean jumping = false;
+    public boolean falling = false;
 
     public int velX;
     public int velY;
 
     public Id id;
+
+    public double gravity = 0.0;
 
     public Handler handler;
 
