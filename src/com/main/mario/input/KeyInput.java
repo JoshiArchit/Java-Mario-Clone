@@ -18,8 +18,12 @@ public class KeyInput implements KeyListener {
 
         for( Entity entity : Game.handler.entity ) {
             switch ( key ) {
-                case KeyEvent.VK_W, KeyEvent.VK_UP -> entity.setVelY( -5 );
-                case KeyEvent.VK_S, KeyEvent.VK_DOWN -> entity.setVelY( 5 );
+                case KeyEvent.VK_W, KeyEvent.VK_UP -> {
+                    if(!entity.jumping) {
+                        entity.jumping = true;
+                        entity.gravity = 10.0;
+                    }
+                }
                 case KeyEvent.VK_A, KeyEvent.VK_LEFT -> entity.setVelX( -5 );
                 case KeyEvent.VK_D, KeyEvent.VK_RIGHT -> entity.setVelX( 5 );
             }
