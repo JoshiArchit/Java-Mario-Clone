@@ -1,4 +1,5 @@
 package com.main.mario;
+import com.main.mario.entity.Entity;
 import com.main.mario.entity.Player;
 import com.main.mario.gfx.Sprite;
 import com.main.mario.gfx.SpriteSheet;
@@ -28,6 +29,8 @@ public class Game extends Canvas implements Runnable{
     public static Sprite grass;
 //    public static Sprite player;
     public static Sprite[] player = new Sprite[5];
+
+    public static Camera cam;
 
 
     public Game() {
@@ -115,6 +118,7 @@ public class Game extends Canvas implements Runnable{
         // setColor(new Color(R,G,B))
         g.setColor( Color.BLACK);
         g.fillRect( 0, 0, getWidth(), getHeight() );
+        g.translate( cam.getX(), cam.getY() ); // Check
         handler.render( g );
         g.dispose();
         bs.show();
@@ -123,11 +127,26 @@ public class Game extends Canvas implements Runnable{
 
     public void tick() {
         handler.tick();
+
+        for(Entity e: handler.entity) {
+            if(e.getId() == Id.player) {
+                cam.tick( e );
+            }
+        }
+    }
+
+    public static int getFrameWidth() {
+        return WIDTH*SCALE;
+    }
+
+    public static int getFrameHeight() {
+        return HEIGHT*SCALE;
     }
 
     private void init() throws IOException {
         handler = new Handler();
         sheet = new SpriteSheet( "/spritesheet.png" );
+        cam = new Camera();
         addKeyListener( new KeyInput() );
         grass = new Sprite( sheet, 2, 1 );
 //        player = new Sprite(sheet, 1, 1);
