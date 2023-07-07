@@ -11,8 +11,8 @@ public class Player extends Entity{
 
     private int frame = 0;
     private int frameDelay = 0;
-
     private boolean animate = false;
+
     public Player( int x, int y, int width, int height, boolean solid, Id id, Handler handler ) {
         // Use entity class constructor
         super( x, y, width, height, solid, id, handler );
@@ -46,6 +46,9 @@ public class Player extends Entity{
         if (velX != 0) animate = true;
         else animate = false;
 
+        //===========================================//
+        // Animation / Collision detection Code
+        //==========================================//
         for( Tile t:handler.tile) {
             if(!t.solid) break;
             if(t.getId() == Id.wall) {
@@ -82,6 +85,7 @@ public class Player extends Entity{
             }
         }
 
+        // Scenario : Jumping
         if(jumping) {
             // gravity -= 0.5;
             gravity -= 0.5;
@@ -92,12 +96,14 @@ public class Player extends Entity{
             }
         }
 
+        // Scenario : Falling
         if(falling) {
             // gravity += 0.1;
             gravity += 0.5;
             setVelY( (int) gravity );
         }
 
+        // Scenario : Adjusting frame to load correct Sprites
         if(animate) {
             frameDelay ++;
             if(frameDelay >= 3) {
