@@ -6,9 +6,11 @@ import com.main.mario.gfx.SpriteSheet;
 import com.main.mario.input.KeyInput;
 import com.main.mario.tile.Wall;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 public class Game extends Canvas implements Runnable{
@@ -21,16 +23,15 @@ public class Game extends Canvas implements Runnable{
     // Game loop threads
     private Thread thread;
     private boolean running = false;
+    private BufferedImage image;
 
     public static Handler handler;
-
     public static SpriteSheet sheet;
-
     public static Sprite grass;
 //    public static Sprite player;
     public static Sprite[] player = new Sprite[5];
-
     public static Camera cam;
+
 
 
     public Game() {
@@ -155,8 +156,10 @@ public class Game extends Canvas implements Runnable{
             player[i] = new Sprite( sheet, i+1, 16 );
         }
 
-        handler.addEntity( new Player( 200, 400, 64, 64, true, Id.player, handler ) );
+        image = ImageIO.read( getClass().getResource( "/level.png" ) );
+//        handler.addEntity( new Player( 200, 400, 64, 64, true, Id.player, handler ) );
 //        handler.addTile( new Wall(200, 200, 64, 64, true, Id.wall, handler) );
+        handler.createLevel( image );
     }
 
     public static void main( String[] args ) {
