@@ -26,7 +26,8 @@ public class Game extends Canvas implements Runnable{
     public static SpriteSheet sheet;
 
     public static Sprite grass;
-    public static Sprite player;
+//    public static Sprite player;
+    public static Sprite[] player = new Sprite[5];
 
 
     public Game() {
@@ -129,7 +130,12 @@ public class Game extends Canvas implements Runnable{
         sheet = new SpriteSheet( "/spritesheet.png" );
         addKeyListener( new KeyInput() );
         grass = new Sprite( sheet, 2, 1 );
-        player = new Sprite(sheet, 1, 1);
+//        player = new Sprite(sheet, 1, 1);
+
+        for(int i = 0; i < player.length; i++) {
+            player[i] = new Sprite( sheet, i+1, 16 );
+        }
+
         handler.addEntity( new Player( 200, 400, 64, 64, true, Id.player, handler ) );
 //        handler.addTile( new Wall(200, 200, 64, 64, true, Id.wall, handler) );
     }
