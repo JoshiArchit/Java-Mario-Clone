@@ -21,11 +21,18 @@ public class KeyInput implements KeyListener {
                 case KeyEvent.VK_W, KeyEvent.VK_UP -> {
                     if(!entity.jumping) {
                         entity.jumping = true;
-                        entity.gravity = 10.0;
+                        // entity.gravity = 10.00;
+                        entity.gravity = 20.0;
                     }
                 }
-                case KeyEvent.VK_A, KeyEvent.VK_LEFT -> entity.setVelX( -5 );
-                case KeyEvent.VK_D, KeyEvent.VK_RIGHT -> entity.setVelX( 5 );
+                case KeyEvent.VK_A, KeyEvent.VK_LEFT -> {
+                    entity.facing = 1;
+                    entity.setVelX( -5 );
+                }
+                case KeyEvent.VK_D, KeyEvent.VK_RIGHT -> {
+                    entity.facing = 2;
+                    entity.setVelX( 5 );
+                }
             }
         }
 
@@ -37,8 +44,14 @@ public class KeyInput implements KeyListener {
 
         for( Entity entity : Game.handler.entity ) {
             switch ( key ) {
-                case KeyEvent.VK_W, KeyEvent.VK_UP, KeyEvent.VK_S, KeyEvent.VK_DOWN -> entity.setVelY( 0 );
-                case KeyEvent.VK_A, KeyEvent.VK_LEFT, KeyEvent.VK_D, KeyEvent.VK_RIGHT -> entity.setVelX( 0 );
+                case KeyEvent.VK_W, KeyEvent.VK_UP, KeyEvent.VK_S, KeyEvent.VK_DOWN -> {
+                    entity.facing = 0;
+                    entity.setVelY( 0 );
+                }
+                case KeyEvent.VK_A, KeyEvent.VK_LEFT, KeyEvent.VK_D, KeyEvent.VK_RIGHT -> {
+                    entity.facing = 0;
+                    entity.setVelX( 0 );
+                }
             }
         }
     }
