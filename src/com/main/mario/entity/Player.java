@@ -40,7 +40,7 @@ public class Player extends Entity{
 
         // Adjust to window bounds
         if (x <= 0) x =0;
-        if (y+height >= 771) y = 771 - height;
+//        if (y+height >= 771) y = 771 - height;
 
         // Animate
         if (velX != 0) animate = true;
