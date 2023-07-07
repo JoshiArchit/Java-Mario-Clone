@@ -13,6 +13,8 @@ public abstract class Entity {
     public boolean jumping = false;
     public boolean falling = false;
 
+    public int facing = 0; // 0 : front, 1: left, 2: right
+
     public int velX;
     public int velY;
 
